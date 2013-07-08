@@ -47,7 +47,7 @@
 		  for (i = 1; i <= times; i++) {
 		    // alert(i + ", " + times);
 		    var color = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
-		    $('#pad').css('background-color', color);
+		    $('#pad').css('background-image', '-moz-linear-gradient(top , white 17%, '+color+' 99%)');
 
 		    var snd = new Audio(sonido);
 		    snd.play();
