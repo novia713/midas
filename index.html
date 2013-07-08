@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Midas</title>
+    <meta charset="utf-8">
+    <link href="/styles/gaiabb/all.css" rel="stylesheet" type="text/css">
+    <link href="/styles/main.css" rel="stylesheet" type="text/css">
+  </head>
+  <body id="base" role="application">
+    <section role="region">
+      <header>
+        <h1>Midas</h1>
+      </header>
+    </section>
+	<div id="container">
+	 <section>
+		<div id="botonera">
+			<br>
+
+			<select id="instrument">
+				<option value ="motley">motley</option>
+				<option value ="cello">cello</option>
+				<option value ="bass">bass</option>
+			</select>
+			<span id="label">Instrument</span>
+			<br>
+
+			<label>
+			  <input type="checkbox" data-type="switch" id="delay" checked="">
+			  <span></span>
+			</label>
+			<span id="label">Delay</span>
+
+			<br>
+
+			<label>
+			  <input type="checkbox" data-type="switch" id="multiple" checked="">
+			  <span></span>
+			</label>
+			<span id="label">Multiple</span>
+		</div>
+		<br>
+		<br>
+		<a onclick="mi_click();">
+		 <div id="pad">
+			<br>
+			<br>
+			<br>
+			<p align="center">Play me!
+			<br>
+			<br>
+			<br>
+		 </div>
+		</a>
+	</section>
+    <script data-main="scripts/main" src="components/requirejs/require.js">
+    </script>
+  </body>
+</html>
+
