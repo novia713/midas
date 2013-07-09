@@ -9,7 +9,7 @@
 		}
 
 
-		function playSound() {
+		function playSound(n = null) {
 		  var instrument = $('#instrument').val();
 		  var dir = "cello";
 		  var ar_instrument = [];
@@ -38,16 +38,17 @@
 											"18092__daven__17-sb-bass-hit-c","18101__daven__26-sb-bass-hit-f","18105__daven__30-sb-bass-hit-f",
 											"183822__quartertone__gtclhrm-05f-5s-69-v01","22571__jdstarrett__dstringlowf","88260__ttptp__c");
 
+		  var x = (n)? n : 0 + Math.floor(Math.random() * 12) ;
+		  var sonido = "../sounds/" + instrument + "/"  + ar_instrument[instrument][x] + ".ogg";
 
-		  var sonido = "../sounds/" + instrument + "/"  + ar_instrument[instrument][0 + Math.floor(Math.random() * 12)] + ".ogg";
-
+		  elem = ( n ) ?  $('#btn' + n) :  $('#pad');
 
 		  var times = ($('#multiple').is(':checked')) ? 1 + Math.floor(Math.random() * 3)  : 1 ;
 		  var i = 1;
 		  for (i = 1; i <= times; i++) {
 		    // alert(i + ", " + times);
 		    var color = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
-		    $('#pad').css('background-image', '-moz-linear-gradient(top , white 17%, '+color+' 99%)');
+		    elem.css('background-image', '-moz-linear-gradient(top , white 17%, '+color+' 99%)');
 
 		    var snd = new Audio(sonido);
 		    snd.play();
@@ -56,8 +57,18 @@
 		}
 
 
-		function mi_click(evt) {
+		function mi_click(n = null) {
 
-		  segs = ($('#delay').is(':checked')) ?  setTimeout(playSound(), 10 + Math.floor(Math.random() * 300)) : playSound() ;
+		  segs = ($('#delay').is(':checked')) ?  setTimeout(function() {  playSound(n) }, 10 + Math.floor(Math.random() * 300)) : playSound(n) ;
 
+		}
+
+		function change_interface(status){
+			if (false === status){
+				$("#container_pad").hide();
+				$('#container_calcu').fadeIn();
+			}else{
+				$("#container_calcu").hide();
+				$('#container_pad').fadeIn();
+			}
 		}

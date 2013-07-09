@@ -17,7 +17,7 @@
 		<div id="botonera">
 			<br>
 
-			<select id="instrument">
+			<select id="instrument" class="icon icon-dialog">
 				<option value ="motley">motley</option>
 				<option value ="cello">cello</option>
 				<option value ="bass">bass</option>
@@ -38,20 +38,41 @@
 			  <span></span>
 			</label>
 			<span id="label">Multiple</span>
+			<br>
+
+			<label>
+			  <input type="checkbox" data-type="switch" id="switch_pad" checked="">
+			  <span></span>
+			</label>
+			<span id="label">Keyboard / Pad</span>
 		</div>
-		<br>
-		<br>
-		<a onclick="mi_click();">
-		 <div id="pad">
+		<div id="container_pad">
 			<br>
-			<br>
-			<br>
-			<p align="center">Play me!
-			<br>
-			<br>
-			<br>
-		 </div>
-		</a>
+			<a onclick="mi_click();">
+			 <div id="pad">
+				<br>
+				<br>
+				<br>
+				<p align="center">Play me!</p>
+				<br>
+				<br>
+				<br>
+			 </div>
+			</a>
+		</div>
+		<div id="container_calcu">
+			<table id="tabla">
+				<tr>
+					<td><button id="btn1" class="btn" onclick="mi_click(1);">1</button></td><td><button id="btn2" class="btn" onclick="mi_click(2);">2</button></td><td><button id="btn3" class="btn" onclick="mi_click(3);">3</button></td>
+				</tr>
+				<tr>
+					<td><button id="btn4" class="btn" onclick="mi_click(4);">4</button></td><td><button id="btn5" class="btn" onclick="mi_click(5);">5</button></td><td><button id="btn6" class="btn" onclick="mi_click(6);">6</button></td>
+				</tr>
+				<tr>
+					<td><button id="btn7" class="btn" onclick="mi_click(7);">7</button></td><td><button id="btn8" class="btn" onclick="mi_click(8);">8</button></td><td><button id="btn9" class="btn" onclick="mi_click(9);">9</button></td>
+				</tr>
+			</table>
+		</div>
 	</section>
     <script data-main="scripts/main" src="components/requirejs/require.js">
     </script>
