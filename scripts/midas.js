@@ -39,7 +39,7 @@
 											"183822__quartertone__gtclhrm-05f-5s-69-v01","22571__jdstarrett__dstringlowf","88260__ttptp__c");
 
 		  var x = (n)? n : 0 + Math.floor(Math.random() * 12) ;
-		  var sonido = "../sounds/" + instrument + "/"  + ar_instrument[instrument][x] + ".ogg";
+		  var sonido = "sounds/" + instrument + "/"  + ar_instrument[instrument][x] + ".ogg";
 
 		  elem = ( n ) ?  $('#btn' + n) :  $('#pad');
 
